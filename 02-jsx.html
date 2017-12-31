@@ -1,0 +1,32 @@
+<div id="root1"></div>
+<div id="root2"></div>
+<div id="root3"></div>
+<script src="https://unpkg.com/react@16.0.0/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+<script type="text/babel">
+const rootElement1 = document.getElementById('root1');
+const rootElement2 = document.getElementById('root2');
+const rootElement3 = document.getElementById('root3');
+// const element = React.createElement( 'div', {
+//  className: 'container', 
+//  children: 'Hello World' 
+//  }, 
+//) 
+const content = 'Hello World';
+const myClass = 'container';
+const props = {
+  className: 'container',
+  children: 'Hello World',
+}
+
+const element1 = <div {...props} />
+const element2 = <div {...props} class={ myClass } />
+const element3 = <div class={ myClass }>{content}</div>
+
+ReactDOM.render(element1, rootElement1)
+ReactDOM.render(element2, rootElement2)
+ReactDOM.render(element3, rootElement3)
+
+</script>
+
